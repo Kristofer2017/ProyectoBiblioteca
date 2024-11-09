@@ -46,7 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Autor.cs" />
+    <Compile Include="Clases\Biblioteca.cs" />
+    <Compile Include="Clases\Compra.cs" />
+    <Compile Include="Clases\Editorial.cs" />
+    <Compile Include="Clases\Libro.cs" />
+    <Compile Include="Clases\Prestamo.cs" />
+    <Compile Include="Clases\Rol.cs" />
+    <Compile Include="Clases\Transacciones.cs" />
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Formularios\NuevoPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\NuevoPrestamo.Designer.cs">
+      <DependentUpon>NuevoPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Prestamos.Designer.cs">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +87,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\NuevoPrestamo.resx">
+      <DependentUpon>NuevoPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Prestamos.resx">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>

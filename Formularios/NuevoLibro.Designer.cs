@@ -41,27 +41,27 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtIsbn = new System.Windows.Forms.TextBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtGenero = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtInventario = new System.Windows.Forms.TextBox();
             this.txtFechaPublicacion = new System.Windows.Forms.DateTimePicker();
+            this.txtInventario = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtGenero = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.txtIsbn = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkDireccionDesconocida = new System.Windows.Forms.CheckBox();
+            this.checkAnioFundDesconocido = new System.Windows.Forms.CheckBox();
             this.txtNombreEditorial = new System.Windows.Forms.TextBox();
             this.txtFundacionEdit = new System.Windows.Forms.TextBox();
             this.txtDireccEditorial = new System.Windows.Forms.RichTextBox();
-            this.checkDireccionDesconocida = new System.Windows.Forms.CheckBox();
-            this.checkAnioFundDesconocido = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkAnonimo = new System.Windows.Forms.CheckBox();
             this.txtNombreAutor = new System.Windows.Forms.TextBox();
             this.txtPaisAutor = new System.Windows.Forms.TextBox();
             this.txtFechaNacAutor = new System.Windows.Forms.DateTimePicker();
-            this.checkAnonimo = new System.Windows.Forms.CheckBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -148,7 +148,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(34, 381);
+            this.label10.Location = new System.Drawing.Point(34, 348);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 9;
@@ -157,7 +157,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(34, 422);
+            this.label11.Location = new System.Drawing.Point(34, 389);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 10;
@@ -166,7 +166,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(34, 463);
+            this.label12.Location = new System.Drawing.Point(34, 430);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 13);
             this.label12.TabIndex = 11;
@@ -193,33 +193,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "detalles libro";
             // 
-            // txtIsbn
+            // txtFechaPublicacion
             // 
-            this.txtIsbn.Location = new System.Drawing.Point(157, 41);
-            this.txtIsbn.Name = "txtIsbn";
-            this.txtIsbn.Size = new System.Drawing.Size(100, 20);
-            this.txtIsbn.TabIndex = 6;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(157, 74);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(100, 20);
-            this.txtTitulo.TabIndex = 6;
-            // 
-            // txtGenero
-            // 
-            this.txtGenero.Location = new System.Drawing.Point(157, 111);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(100, 20);
-            this.txtGenero.TabIndex = 6;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(157, 185);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 6;
+            this.txtFechaPublicacion.Location = new System.Drawing.Point(157, 147);
+            this.txtFechaPublicacion.Name = "txtFechaPublicacion";
+            this.txtFechaPublicacion.Size = new System.Drawing.Size(100, 20);
+            this.txtFechaPublicacion.TabIndex = 7;
             // 
             // txtInventario
             // 
@@ -228,12 +207,33 @@
             this.txtInventario.Size = new System.Drawing.Size(100, 20);
             this.txtInventario.TabIndex = 6;
             // 
-            // txtFechaPublicacion
+            // txtPrecio
             // 
-            this.txtFechaPublicacion.Location = new System.Drawing.Point(157, 147);
-            this.txtFechaPublicacion.Name = "txtFechaPublicacion";
-            this.txtFechaPublicacion.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaPublicacion.TabIndex = 7;
+            this.txtPrecio.Location = new System.Drawing.Point(157, 185);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.TabIndex = 6;
+            // 
+            // txtGenero
+            // 
+            this.txtGenero.Location = new System.Drawing.Point(157, 111);
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(100, 20);
+            this.txtGenero.TabIndex = 6;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(157, 74);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(100, 20);
+            this.txtTitulo.TabIndex = 6;
+            // 
+            // txtIsbn
+            // 
+            this.txtIsbn.Location = new System.Drawing.Point(157, 41);
+            this.txtIsbn.Name = "txtIsbn";
+            this.txtIsbn.Size = new System.Drawing.Size(100, 20);
+            this.txtIsbn.TabIndex = 6;
             // 
             // groupBox2
             // 
@@ -245,28 +245,6 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "detalles editorial";
-            // 
-            // txtNombreEditorial
-            // 
-            this.txtNombreEditorial.Location = new System.Drawing.Point(418, 52);
-            this.txtNombreEditorial.Name = "txtNombreEditorial";
-            this.txtNombreEditorial.Size = new System.Drawing.Size(118, 20);
-            this.txtNombreEditorial.TabIndex = 14;
-            // 
-            // txtFundacionEdit
-            // 
-            this.txtFundacionEdit.Location = new System.Drawing.Point(418, 214);
-            this.txtFundacionEdit.Name = "txtFundacionEdit";
-            this.txtFundacionEdit.Size = new System.Drawing.Size(118, 20);
-            this.txtFundacionEdit.TabIndex = 14;
-            // 
-            // txtDireccEditorial
-            // 
-            this.txtDireccEditorial.Location = new System.Drawing.Point(418, 90);
-            this.txtDireccEditorial.Name = "txtDireccEditorial";
-            this.txtDireccEditorial.Size = new System.Drawing.Size(118, 77);
-            this.txtDireccEditorial.TabIndex = 15;
-            this.txtDireccEditorial.Text = "";
             // 
             // checkDireccionDesconocida
             // 
@@ -290,66 +268,103 @@
             this.checkAnioFundDesconocido.Text = "desconocido";
             this.checkAnioFundDesconocido.UseVisualStyleBackColor = true;
             // 
+            // txtNombreEditorial
+            // 
+            this.txtNombreEditorial.Location = new System.Drawing.Point(418, 52);
+            this.txtNombreEditorial.Name = "txtNombreEditorial";
+            this.txtNombreEditorial.Size = new System.Drawing.Size(118, 20);
+            this.txtNombreEditorial.TabIndex = 14;
+            // 
+            // txtFundacionEdit
+            // 
+            this.txtFundacionEdit.Location = new System.Drawing.Point(418, 214);
+            this.txtFundacionEdit.Name = "txtFundacionEdit";
+            this.txtFundacionEdit.Size = new System.Drawing.Size(118, 20);
+            this.txtFundacionEdit.TabIndex = 14;
+            // 
+            // txtDireccEditorial
+            // 
+            this.txtDireccEditorial.Location = new System.Drawing.Point(418, 90);
+            this.txtDireccEditorial.Name = "txtDireccEditorial";
+            this.txtDireccEditorial.Size = new System.Drawing.Size(118, 77);
+            this.txtDireccEditorial.TabIndex = 15;
+            this.txtDireccEditorial.Text = "";
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkAnonimo);
             this.groupBox3.Location = new System.Drawing.Point(12, 307);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(283, 212);
+            this.groupBox3.Size = new System.Drawing.Size(283, 170);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "detalles de autor";
             // 
-            // txtNombreAutor
-            // 
-            this.txtNombreAutor.Location = new System.Drawing.Point(134, 381);
-            this.txtNombreAutor.Name = "txtNombreAutor";
-            this.txtNombreAutor.Size = new System.Drawing.Size(134, 20);
-            this.txtNombreAutor.TabIndex = 0;
-            // 
-            // txtPaisAutor
-            // 
-            this.txtPaisAutor.Location = new System.Drawing.Point(134, 419);
-            this.txtPaisAutor.Name = "txtPaisAutor";
-            this.txtPaisAutor.Size = new System.Drawing.Size(134, 20);
-            this.txtPaisAutor.TabIndex = 17;
-            // 
-            // txtFechaNacAutor
-            // 
-            this.txtFechaNacAutor.Location = new System.Drawing.Point(134, 463);
-            this.txtFechaNacAutor.Name = "txtFechaNacAutor";
-            this.txtFechaNacAutor.Size = new System.Drawing.Size(134, 20);
-            this.txtFechaNacAutor.TabIndex = 18;
-            // 
             // checkAnonimo
             // 
             this.checkAnonimo.AutoSize = true;
-            this.checkAnonimo.Location = new System.Drawing.Point(23, 39);
+            this.checkAnonimo.Location = new System.Drawing.Point(394, 315);
             this.checkAnonimo.Name = "checkAnonimo";
             this.checkAnonimo.Size = new System.Drawing.Size(95, 17);
             this.checkAnonimo.TabIndex = 0;
             this.checkAnonimo.Text = "Autor Anónimo";
             this.checkAnonimo.UseVisualStyleBackColor = true;
             // 
+            // txtNombreAutor
+            // 
+            this.txtNombreAutor.Location = new System.Drawing.Point(134, 348);
+            this.txtNombreAutor.Name = "txtNombreAutor";
+            this.txtNombreAutor.Size = new System.Drawing.Size(134, 20);
+            this.txtNombreAutor.TabIndex = 0;
+            // 
+            // txtPaisAutor
+            // 
+            this.txtPaisAutor.Location = new System.Drawing.Point(134, 386);
+            this.txtPaisAutor.Name = "txtPaisAutor";
+            this.txtPaisAutor.Size = new System.Drawing.Size(134, 20);
+            this.txtPaisAutor.TabIndex = 17;
+            // 
+            // txtFechaNacAutor
+            // 
+            this.txtFechaNacAutor.Location = new System.Drawing.Point(134, 430);
+            this.txtFechaNacAutor.Name = "txtFechaNacAutor";
+            this.txtFechaNacAutor.Size = new System.Drawing.Size(134, 20);
+            this.txtFechaNacAutor.TabIndex = 18;
+            // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAgregar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregar.Location = new System.Drawing.Point(378, 404);
+            this.btnAgregar.Location = new System.Drawing.Point(355, 411);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(158, 49);
+            this.btnAgregar.Size = new System.Drawing.Size(181, 49);
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "Agregar Libro";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLimpiar.Location = new System.Drawing.Point(355, 347);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(181, 49);
+            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.Text = "Limpiar Campos";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // NuevoLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 559);
+            this.ClientSize = new System.Drawing.Size(595, 497);
+            this.Controls.Add(this.checkAnonimo);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtFechaNacAutor);
             this.Controls.Add(this.txtPaisAutor);
@@ -372,8 +387,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +425,6 @@
         private System.Windows.Forms.TextBox txtPaisAutor;
         private System.Windows.Forms.DateTimePicker txtFechaNacAutor;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

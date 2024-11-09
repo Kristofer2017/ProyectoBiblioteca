@@ -47,6 +47,7 @@ namespace ProyectoBiblioteca
                 Home formInicio = new Home();
                 formInicio.Show();
 
+                this.Hide();
             }
             else
             {

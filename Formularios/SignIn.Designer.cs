@@ -37,23 +37,23 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInvitado = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(181, 63);
+            this.txtUsuario.Location = new System.Drawing.Point(157, 66);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(106, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContra
             // 
-            this.txtContra.Location = new System.Drawing.Point(181, 105);
+            this.txtContra.Location = new System.Drawing.Point(157, 108);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '●';
-            this.txtContra.Size = new System.Drawing.Size(100, 20);
+            this.txtContra.Size = new System.Drawing.Size(106, 20);
             this.txtContra.TabIndex = 1;
             // 
             // btnSignin
@@ -62,9 +62,9 @@
             this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignin.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSignin.Location = new System.Drawing.Point(116, 155);
+            this.btnSignin.Location = new System.Drawing.Point(75, 158);
             this.btnSignin.Name = "btnSignin";
-            this.btnSignin.Size = new System.Drawing.Size(144, 49);
+            this.btnSignin.Size = new System.Drawing.Size(188, 49);
             this.btnSignin.TabIndex = 2;
             this.btnSignin.Text = "Iniciar Sesión";
             this.btnSignin.UseVisualStyleBackColor = false;
@@ -73,27 +73,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 70);
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Usuario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 112);
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(209, 231);
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(164, 259);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(60, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(64, 16);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Registrarse";
@@ -101,9 +104,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 205);
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(57, 259);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.Size = new System.Drawing.Size(101, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "No tienes cuenta?";
             // 
@@ -111,35 +115,35 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.btnInvitado);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(44, 25);
+            this.panel1.Location = new System.Drawing.Point(26, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 329);
             this.panel1.TabIndex = 6;
             // 
-            // button1
+            // btnInvitado
             // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(60, 249);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 32);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Entrar Como invitado";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnInvitado.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInvitado.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvitado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInvitado.Location = new System.Drawing.Point(48, 191);
+            this.btnInvitado.Name = "btnInvitado";
+            this.btnInvitado.Size = new System.Drawing.Size(188, 49);
+            this.btnInvitado.TabIndex = 7;
+            this.btnInvitado.Text = "Entrar como invitado";
+            this.btnInvitado.UseVisualStyleBackColor = false;
             // 
             // FSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(375, 402);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(345, 382);
             this.Controls.Add(this.btnSignin);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
@@ -166,7 +170,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInvitado;
     }
 }
 

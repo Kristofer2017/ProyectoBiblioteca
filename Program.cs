@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBiblioteca.Formularios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ProyectoBiblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FSignIn());
+            Application.Run(new Prestamos());
         }
     }
 }
