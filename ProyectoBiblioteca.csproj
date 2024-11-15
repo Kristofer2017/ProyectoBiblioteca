@@ -55,6 +55,18 @@
     <Compile Include="Clases\Rol.cs" />
     <Compile Include="Clases\Transacciones.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Formularios\AdministrarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdministrarUsuarios.Designer.cs">
+      <DependentUpon>AdministrarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\NombreInvitado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\NombreInvitado.Designer.cs">
+      <DependentUpon>NombreInvitado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\NuevoPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +78,12 @@
     </Compile>
     <Compile Include="Formularios\Prestamos.Designer.cs">
       <DependentUpon>Prestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\SignIn.cs">
       <SubType>Form</SubType>
@@ -87,11 +105,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\AdministrarUsuarios.resx">
+      <DependentUpon>AdministrarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\NombreInvitado.resx">
+      <DependentUpon>NombreInvitado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NuevoPrestamo.resx">
       <DependentUpon>NuevoPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Prestamos.resx">
       <DependentUpon>Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -110,6 +137,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,6 +152,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\libros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prestamos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magni-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier-2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
