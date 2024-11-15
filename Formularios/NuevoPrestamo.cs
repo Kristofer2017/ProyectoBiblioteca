@@ -50,9 +50,13 @@ namespace ProyectoBiblioteca.Formularios
 
         private void cbxCantidadDias_CheckedChanged(object sender, EventArgs e)
         {
+            // Habilitamos campo numero y deshabilitamos fecha
             nudCantidadDias.Enabled = cbxCantidadDias.Checked;
-            nudCantidadDias.Value = 0;
             dtpFechaDevolucion.Enabled = !cbxCantidadDias.Checked;
+
+            // Reseteamos valores de numero y fecha
+            nudCantidadDias.Value = 0;
+            dtpFechaDevolucion.Value = DateTime.Now;
         }
 
         private void dtpFechaPrestamo_ValueChanged(object sender, EventArgs e)
@@ -89,6 +93,20 @@ namespace ProyectoBiblioteca.Formularios
             {
                 MessageBox.Show("Error! datos no insertados");
             }
+        }
+
+        private void nudCantidadDias_ValueChanged(object sender, EventArgs e)
+        {
+            int diasAgregados = (int) nudCantidadDias.Value;
+
+            dtpFechaDevolucion.Value = DateTime.Today.AddDays(diasAgregados);
+
+            actualizarResumenPrestamo();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

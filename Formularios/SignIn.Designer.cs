@@ -62,7 +62,7 @@
             this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignin.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSignin.Location = new System.Drawing.Point(75, 158);
+            this.btnSignin.Location = new System.Drawing.Point(75, 157);
             this.btnSignin.Name = "btnSignin";
             this.btnSignin.Size = new System.Drawing.Size(188, 49);
             this.btnSignin.TabIndex = 2;
@@ -94,18 +94,19 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(164, 259);
+            this.linkLabel1.Location = new System.Drawing.Point(164, 258);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(64, 16);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Registrarse";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 259);
+            this.label3.Location = new System.Drawing.Point(57, 258);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 16);
             this.label3.TabIndex = 5;
@@ -131,12 +132,13 @@
             this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInvitado.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvitado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInvitado.Location = new System.Drawing.Point(48, 191);
+            this.btnInvitado.Location = new System.Drawing.Point(48, 190);
             this.btnInvitado.Name = "btnInvitado";
             this.btnInvitado.Size = new System.Drawing.Size(188, 49);
             this.btnInvitado.TabIndex = 7;
             this.btnInvitado.Text = "Entrar como invitado";
             this.btnInvitado.UseVisualStyleBackColor = false;
+            this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
             // 
             // FSignIn
             // 
@@ -148,11 +150,13 @@
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FSignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FSignIn_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

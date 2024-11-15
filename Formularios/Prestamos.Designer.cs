@@ -31,6 +31,7 @@
             this.btnNuevoPrestamo = new System.Windows.Forms.Button();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,15 +66,28 @@
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Lista de prestamos";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(568, 264);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 72);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Marcar devuelto";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Prestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.btnNuevoPrestamo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Prestamos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prestamos";
             this.Load += new System.EventHandler(this.Prestamos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
@@ -87,5 +101,6 @@
         private System.Windows.Forms.Button btnNuevoPrestamo;
         private System.Windows.Forms.DataGridView dgvPrestamos;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoBiblioteca.Clases
 {
-    internal class Biblioteca
+    public class Biblioteca
     {
         public int id { get; set; }
     }
