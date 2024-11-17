@@ -148,18 +148,6 @@ namespace ProyectoBiblioteca.Formularios
             limpiarCampos();
         }
 
-
-
-        
-
-        
-
-        private void AdministrarUsuarios_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Al usar la funcion hide del home, no se cierra este formulario
-            Application.Exit();
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiarCampos();

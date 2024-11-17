@@ -17,7 +17,7 @@ namespace ProyectoBiblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FSignIn());
+            Application.Run(new RootForm());
         }
     }
 }

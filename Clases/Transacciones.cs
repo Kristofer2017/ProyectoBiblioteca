@@ -25,8 +25,6 @@ namespace ProyectoBiblioteca.Clases
             listaTablas = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.IsSubclassOf(typeof(Biblioteca))).Select(t => t.Name).ToArray();
         }
 
-
-
         public bool ejecutarSql(string sql)
         {
             try

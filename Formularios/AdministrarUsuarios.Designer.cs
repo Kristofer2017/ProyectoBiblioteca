@@ -272,7 +272,6 @@
             this.Name = "AdministrarUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrar Usuarios";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministrarUsuarios_FormClosing);
             this.Load += new System.EventHandler(this.AdministrarUsuarios_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
