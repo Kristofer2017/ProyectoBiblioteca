@@ -6,13 +6,28 @@ using System.Threading.Tasks;
 
 namespace ProyectoBiblioteca.Clases
 {
-    internal class Prestamo : Biblioteca
+    public class Prestamo : Biblioteca
     {
         public string fechaPrestamo { get; set; }
         public string fechaDevolucion { get; set; }
         public string estadoPrestamo { get; set; }
-        public double multa { get; set; }
+        public double costo { get; set; }
         public int idUsuario { get; set; }
         public int idLibro { get; set; }
+
+        public Prestamo(string fechaPrestamo, string fechaDevolucion, string estadoPrestamo, double costo, int idUsuario, int idLibro)
+        {
+            this.fechaPrestamo = fechaPrestamo;
+            this.fechaDevolucion = fechaDevolucion;
+            this.estadoPrestamo = estadoPrestamo;
+            this.costo = costo;
+            this.idUsuario = idUsuario;
+            this.idLibro = idLibro;
+        }
+
+        public Prestamo()
+        {
+            
+        }
     }
 }

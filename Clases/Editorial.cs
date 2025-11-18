@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace ProyectoBiblioteca.Clases
 {
-    internal class Editorial : Biblioteca
+    public class Editorial : Biblioteca
     {
         public string nombreEditorial { get; set; }
         public string direccion { get; set; }
+
+        public Editorial(string nombreEditorial, string direccion)
+        {
+            this.nombreEditorial = nombreEditorial;
+            this.direccion = direccion;
+        }
+
+        public Editorial()
+        {
+            
+        }
     }
 }

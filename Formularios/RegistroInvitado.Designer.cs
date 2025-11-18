@@ -1,6 +1,6 @@
 ﻿namespace ProyectoBiblioteca.Formularios
 {
-    partial class NombreInvitado
+    partial class RegistroInvitado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NombreInvitado));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroInvitado));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnContinuar = new System.Windows.Forms.Button();
+            this.txtNombreInvitado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -63,30 +63,33 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button1
+            // btnContinuar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(180, 135);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 42);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Continuar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnContinuar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinuar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinuar.ForeColor = System.Drawing.Color.White;
+            this.btnContinuar.Location = new System.Drawing.Point(180, 135);
+            this.btnContinuar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(140, 42);
+            this.btnContinuar.TabIndex = 28;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.UseVisualStyleBackColor = false;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
-            // textBox1
+            // txtNombreInvitado
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtNombreInvitado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(28, 74);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 41);
-            this.textBox1.TabIndex = 29;
+            this.txtNombreInvitado.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreInvitado.Location = new System.Drawing.Point(28, 74);
+            this.txtNombreInvitado.Multiline = true;
+            this.txtNombreInvitado.Name = "txtNombreInvitado";
+            this.txtNombreInvitado.Size = new System.Drawing.Size(288, 39);
+            this.txtNombreInvitado.TabIndex = 29;
+            this.txtNombreInvitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NombreInvitado
             // 
@@ -94,12 +97,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(345, 211);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtNombreInvitado);
+            this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "NombreInvitado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar como Invitado";
@@ -112,7 +116,7 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnContinuar;
+        private System.Windows.Forms.TextBox txtNombreInvitado;
     }
 }

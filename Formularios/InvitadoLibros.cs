@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoBiblioteca.Formularios
 {
-    public partial class NombreInvitado : Form
+    public partial class InvitadoLibros : Form
     {
-        public NombreInvitado()
+        public InvitadoLibros()
         {
             InitializeComponent();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

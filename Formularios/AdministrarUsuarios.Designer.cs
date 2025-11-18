@@ -46,6 +46,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.checkContrasena = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -135,21 +136,22 @@
             this.txtContrasena.Location = new System.Drawing.Point(123, 141);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(113, 20);
+            this.txtContrasena.Size = new System.Drawing.Size(93, 20);
             this.txtContrasena.TabIndex = 8;
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvUsuarios.Location = new System.Drawing.Point(322, 75);
+            this.dgvUsuarios.Location = new System.Drawing.Point(300, 75);
             this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 62;
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(332, 237);
+            this.dgvUsuarios.Size = new System.Drawing.Size(375, 237);
             this.dgvUsuarios.TabIndex = 1;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -200,6 +202,7 @@
             // 
             // cmbRoles
             // 
+            this.cmbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoles.FormattingEnabled = true;
             this.cmbRoles.Location = new System.Drawing.Point(123, 183);
             this.cmbRoles.Name = "cmbRoles";
@@ -208,6 +211,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkContrasena);
             this.groupBox1.Controls.Add(this.cmbRoles);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -218,7 +222,7 @@
             this.groupBox1.Controls.Add(this.txtContrasena);
             this.groupBox1.Location = new System.Drawing.Point(24, 75);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 237);
+            this.groupBox1.Size = new System.Drawing.Size(268, 237);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles de usuario";
@@ -231,7 +235,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(24, 27);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(630, 23);
+            this.lblTitulo.Size = new System.Drawing.Size(651, 23);
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Administrar Usuarios";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -251,12 +255,23 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // checkContrasena
+            // 
+            this.checkContrasena.AutoSize = true;
+            this.checkContrasena.Location = new System.Drawing.Point(222, 145);
+            this.checkContrasena.Margin = new System.Windows.Forms.Padding(2);
+            this.checkContrasena.Name = "checkContrasena";
+            this.checkContrasena.Size = new System.Drawing.Size(15, 14);
+            this.checkContrasena.TabIndex = 17;
+            this.checkContrasena.UseVisualStyleBackColor = true;
+            this.checkContrasena.CheckedChanged += new System.EventHandler(this.checkContrasena_CheckedChanged);
+            // 
             // AdministrarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(675, 431);
+            this.ClientSize = new System.Drawing.Size(696, 431);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnLimpiar);
@@ -272,7 +287,6 @@
             this.Name = "AdministrarUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrar Usuarios";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministrarUsuarios_FormClosing);
             this.Load += new System.EventHandler(this.AdministrarUsuarios_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -301,5 +315,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.CheckBox checkContrasena;
     }
 }

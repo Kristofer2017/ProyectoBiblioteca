@@ -14,21 +14,29 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoBiblioteca
 {
-    public partial class FSignIn : Form
+    public partial class SignIn : Form
     {
-        public FSignIn()
+        public event EventHandler LoginSuccess;
+
+        public SignIn()
         {
             InitializeComponent();
         }
-
+        
         Transacciones t = new Transacciones();
+
         public static Usuario usuarioIngreso { get; set; }
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
             if (camposVacios())
             {
-                MessageBox.Show("Debe ingresar usuario y contraseña");
+                DialogResult result = MessageBox.Show(
+                    "Por favor ingrese su usuario y contraseña",
+                    "Campos vacíos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
                 return;
             }
 
@@ -39,14 +47,24 @@ namespace ProyectoBiblioteca
 
             if (usuarioIngreso != null)
             {
-                Home formInicio = new Home();
-                formInicio.Show();
-                this.Hide();
+                LoginSuccess?.Invoke(this, EventArgs.Empty);
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña inválidos!");
+                DialogResult result = MessageBox.Show(
+                    "El Usuario o Contraseña son incorrectos",
+                    "Credenciales Incorrectas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
+        }
+
+        public void LimpiarCampos()
+        {
+            txtUsuario.Text = string.Empty;
+            txtContra.Text = string.Empty;
+            checkPassword.Checked = false;
         }
 
         private bool camposVacios()
@@ -56,24 +74,37 @@ namespace ProyectoBiblioteca
 
         private void btnInvitado_Click(object sender, EventArgs e)
         {
-            NombreInvitado frmInvitado = new NombreInvitado();
-            frmInvitado.ShowDialog();
-        }
+            using(RegistroInvitado frmInvitado = new RegistroInvitado())
+            {
+                DialogResult resultado = frmInvitado.ShowDialog();
 
-        private void FSignIn_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show(
-                "¿Está seguro de que desea salir de la aplicación?",
-                "Confirmar cierre",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-        }
+                if (resultado == DialogResult.OK)
+                {
+                    usuarioIngreso = frmInvitado.nuevoInvitado;
 
+                    LoginSuccess?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+        
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Registro frmRegistro = new Registro();
-            frmRegistro.ShowDialog();
+            using (Registro frmRegistro = new Registro())
+            {
+                DialogResult resultado = frmRegistro.ShowDialog();
+            }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtContra.UseSystemPasswordChar = !checkPassword.Checked;
+        }
+
+        private void SignIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 }

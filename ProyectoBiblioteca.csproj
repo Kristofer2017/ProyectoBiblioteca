@@ -12,9 +12,24 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\admi\Documents\Workspaces\DAE\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +49,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,23 +71,122 @@
     <Compile Include="Clases\Autor.cs" />
     <Compile Include="Clases\Biblioteca.cs" />
     <Compile Include="Clases\Compra.cs" />
+    <Compile Include="Clases\LibrosUnion.cs" />
+    <Compile Include="Clases\Proveedor.cs" />
+    <Compile Include="Clases\Venta.cs" />
     <Compile Include="Clases\Editorial.cs" />
     <Compile Include="Clases\Libro.cs" />
     <Compile Include="Clases\Prestamo.cs" />
     <Compile Include="Clases\Rol.cs" />
     <Compile Include="Clases\Transacciones.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Formularios\AdministrarCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdministrarCompras.Designer.cs">
+      <DependentUpon>AdministrarCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdministrarComprasVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdministrarComprasVentas.Designer.cs">
+      <DependentUpon>AdministrarComprasVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdministrarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdministrarProveedores.Designer.cs">
+      <DependentUpon>AdministrarProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\AdministrarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\AdministrarUsuarios.Designer.cs">
       <DependentUpon>AdministrarUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\NombreInvitado.cs">
+    <Compile Include="Formularios\AdministrarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\NombreInvitado.Designer.cs">
-      <DependentUpon>NombreInvitado.cs</DependentUpon>
+    <Compile Include="Formularios\AdministrarVentas.Designer.cs">
+      <DependentUpon>AdministrarVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdministrarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdministrarAutores.Designer.cs">
+      <DependentUpon>AdministrarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\InvitadoLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\InvitadoLibros.Designer.cs">
+      <DependentUpon>InvitadoLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\InvitadoVerLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\InvitadoVerLibros.Designer.cs">
+      <DependentUpon>InvitadoVerLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteCompras.Designer.cs">
+      <DependentUpon>ReporteCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteLibros.Designer.cs">
+      <DependentUpon>ReporteLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteVentas.Designer.cs">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\UsuarioPrestar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\UsuarioPrestar.Designer.cs">
+      <DependentUpon>UsuarioPrestar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\UsuarioVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\UsuarioVenta.Designer.cs">
+      <DependentUpon>UsuarioVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\UsuarioVentaConfirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\UsuarioVentaConfirmar.Designer.cs">
+      <DependentUpon>UsuarioVentaConfirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CompraLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CompraLibros.Designer.cs">
+      <DependentUpon>CompraLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdministrarEditoriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdministrarEditoriales.Designer.cs">
+      <DependentUpon>AdministrarEditoriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdministrarLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdministrarLibros.Designer.cs">
+      <DependentUpon>AdministrarLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RegistroInvitado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RegistroInvitado.Designer.cs">
+      <DependentUpon>RegistroInvitado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\NuevoPrestamo.cs">
       <SubType>Form</SubType>
@@ -73,17 +194,23 @@
     <Compile Include="Formularios\NuevoPrestamo.Designer.cs">
       <DependentUpon>NuevoPrestamo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Prestamos.cs">
+    <Compile Include="Formularios\AdministrarPrestamos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Prestamos.Designer.cs">
-      <DependentUpon>Prestamos.cs</DependentUpon>
+    <Compile Include="Formularios\AdministrarPrestamos.Designer.cs">
+      <DependentUpon>AdministrarPrestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RootForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RootForm.Designer.cs">
+      <DependentUpon>RootForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\SignIn.cs">
       <SubType>Form</SubType>
@@ -97,37 +224,97 @@
     <Compile Include="Formularios\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\NuevoLibro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\NuevoLibro.Designer.cs">
-      <DependentUpon>NuevoLibro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\ReporteCompras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteCompras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteLibros.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteLibros.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Formularios\AdministrarCompras.resx">
+      <DependentUpon>AdministrarCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AdministrarComprasVentas.resx">
+      <DependentUpon>AdministrarComprasVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AdministrarProveedores.resx">
+      <DependentUpon>AdministrarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AdministrarUsuarios.resx">
       <DependentUpon>AdministrarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\NombreInvitado.resx">
-      <DependentUpon>NombreInvitado.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\AdministrarAutores.resx">
+      <DependentUpon>AdministrarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AdministrarVentas.resx">
+      <DependentUpon>AdministrarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\InvitadoLibros.resx">
+      <DependentUpon>InvitadoLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\InvitadoVerLibros.resx">
+      <DependentUpon>InvitadoVerLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteCompras.resx">
+      <DependentUpon>ReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteLibros.resx">
+      <DependentUpon>ReporteLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteVentas.resx">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\UsuarioPrestar.resx">
+      <DependentUpon>UsuarioPrestar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\UsuarioVenta.resx">
+      <DependentUpon>UsuarioVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\UsuarioVentaConfirmar.resx">
+      <DependentUpon>UsuarioVentaConfirmar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CompraLibros.resx">
+      <DependentUpon>CompraLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AdministrarEditoriales.resx">
+      <DependentUpon>AdministrarEditoriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AdministrarLibros.resx">
+      <DependentUpon>AdministrarLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RegistroInvitado.resx">
+      <DependentUpon>RegistroInvitado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NuevoPrestamo.resx">
       <DependentUpon>NuevoPrestamo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Prestamos.resx">
-      <DependentUpon>Prestamos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\AdministrarPrestamos.resx">
+      <DependentUpon>AdministrarPrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RootForm.resx">
+      <DependentUpon>RootForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\NuevoLibro.resx">
-      <DependentUpon>NuevoLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,6 +326,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\ReporteCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCompras.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteLibros.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteLibros.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteVentas.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -178,6 +377,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\magnifier-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magazine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -66,8 +66,8 @@ namespace ProyectoBiblioteca.Formularios
             {
                 return;
             }
-            
-            
+
+
             Usuario u = new Usuario();
 
             u.nombreUsuario = txtNombre.Text;
@@ -129,7 +129,6 @@ namespace ProyectoBiblioteca.Formularios
 
         private void AdministrarUsuarios_Load_1(object sender, EventArgs e)
         {
-            txtContrasena.PasswordChar = '●';
             actualizarDVG();
 
             // Llenando dropdown/combobox con roles
@@ -138,7 +137,7 @@ namespace ProyectoBiblioteca.Formularios
             cmbRoles.Items.Add("Administrador");
         }
 
-        
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -148,21 +147,14 @@ namespace ProyectoBiblioteca.Formularios
             limpiarCampos();
         }
 
-
-
-        
-
-        
-
-        private void AdministrarUsuarios_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Al usar la funcion hide del home, no se cierra este formulario
-            Application.Exit();
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+        }
+
+        private void checkContrasena_CheckedChanged(object sender, EventArgs e)
+        {
+            txtContrasena.UseSystemPasswordChar = !checkContrasena.Checked;
         }
     }
 }
