@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoBiblioteca.Clases
 {
-    internal class Rol : Biblioteca
+    public class Rol : Biblioteca
     {
         public string rolUsuario { get; set; }
     }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoBiblioteca.Formularios
 {
-    public partial class LibrosAdmin : Form
+    public partial class InvitadoLibros : Form
     {
-        public LibrosAdmin()
+        public InvitadoLibros()
         {
             InitializeComponent();
         }

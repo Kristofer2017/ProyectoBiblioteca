@@ -41,6 +41,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkPassword = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,8 +91,9 @@
             // 
             this.txtContrasena.Location = new System.Drawing.Point(114, 107);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(152, 20);
+            this.txtContrasena.Size = new System.Drawing.Size(131, 20);
             this.txtContrasena.TabIndex = 3;
+            this.txtContrasena.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -103,6 +106,7 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.Location = new System.Drawing.Point(114, 149);
             this.cmbRol.Name = "cmbRol";
@@ -115,7 +119,7 @@
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.ForeColor = System.Drawing.Color.White;
-            this.btnRegistro.Location = new System.Drawing.Point(150, 206);
+            this.btnRegistro.Location = new System.Drawing.Point(150, 223);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(117, 41);
             this.btnRegistro.TabIndex = 6;
@@ -139,7 +143,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(23, 206);
+            this.btnCancelar.Location = new System.Drawing.Point(23, 223);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 41);
             this.btnCancelar.TabIndex = 6;
@@ -150,6 +154,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.checkPassword);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtContrasena);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnRegistro);
@@ -160,17 +166,36 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.txtUsuario);
-            this.panel1.Location = new System.Drawing.Point(21, 60);
+            this.panel1.Location = new System.Drawing.Point(21, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 278);
+            this.panel1.Size = new System.Drawing.Size(297, 295);
             this.panel1.TabIndex = 8;
+            // 
+            // checkPassword
+            // 
+            this.checkPassword.AutoSize = true;
+            this.checkPassword.Location = new System.Drawing.Point(251, 110);
+            this.checkPassword.Name = "checkPassword";
+            this.checkPassword.Size = new System.Drawing.Size(15, 14);
+            this.checkPassword.TabIndex = 9;
+            this.checkPassword.UseVisualStyleBackColor = true;
+            this.checkPassword.CheckedChanged += new System.EventHandler(this.checkPassword_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(28, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(238, 33);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "** Tendras que iniciar sesión con el usuario y contraseña ingresados **\r\n";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(345, 370);
+            this.ClientSize = new System.Drawing.Size(345, 382);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -200,5 +225,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkPassword;
     }
 }

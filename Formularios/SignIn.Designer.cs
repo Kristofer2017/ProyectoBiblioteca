@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnInvitado = new System.Windows.Forms.Button();
+            this.checkPassword = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@
             // 
             this.txtContra.Location = new System.Drawing.Point(157, 108);
             this.txtContra.Name = "txtContra";
-            this.txtContra.PasswordChar = '●';
-            this.txtContra.Size = new System.Drawing.Size(106, 20);
+            this.txtContra.Size = new System.Drawing.Size(85, 20);
             this.txtContra.TabIndex = 1;
+            this.txtContra.UseSystemPasswordChar = true;
             // 
             // btnSignin
             // 
@@ -116,6 +117,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.checkPassword);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.btnInvitado);
             this.panel1.Controls.Add(this.label1);
@@ -139,6 +141,16 @@
             this.btnInvitado.Text = "Entrar como invitado";
             this.btnInvitado.UseVisualStyleBackColor = false;
             this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
+            // 
+            // checkPassword
+            // 
+            this.checkPassword.AutoSize = true;
+            this.checkPassword.Location = new System.Drawing.Point(222, 89);
+            this.checkPassword.Name = "checkPassword";
+            this.checkPassword.Size = new System.Drawing.Size(15, 14);
+            this.checkPassword.TabIndex = 8;
+            this.checkPassword.UseVisualStyleBackColor = true;
+            this.checkPassword.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // SignIn
             // 
@@ -175,6 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnInvitado;
+        private System.Windows.Forms.CheckBox checkPassword;
     }
 }
 

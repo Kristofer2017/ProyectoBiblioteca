@@ -46,6 +46,7 @@ namespace ProyectoBiblioteca.Formularios
         private void ShowHomeForm()
         {
             frmSignIn.Hide();
+            frmHome.ActualizarHomeForm();
             frmHome.Show();
         }
 
@@ -62,7 +63,7 @@ namespace ProyectoBiblioteca.Formularios
         // Manejo del cierre de la aplicacion
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            // Mostrar el cuadro de confirmación
+            base.OnFormClosing(e);
             var result = MessageBox.Show(
                 "¿Estás seguro de que deseas salir de la aplicación?",
                 "Confirmación",
@@ -72,21 +73,13 @@ namespace ProyectoBiblioteca.Formularios
 
             if (result == DialogResult.No)
             {
-                e.Cancel = true; // Cancela el cierre si el usuario selecciona "No"
+                e.Cancel = true; // Cancelar el cierre si selecciona No
             }
             else
             {
-                // Cierra cualquier formulario hijo si está abierto o oculto
-                foreach (Form openForm in Application.OpenForms)
-                {
-                    if (openForm != this)
-                    {
-                        openForm.Close();
-                    }
-                }
-
-                Application.Exit(); // Finaliza la aplicación correctamente
+                Application.Exit(); // Terminar la aplicación
             }
+            
         }
     }
 }

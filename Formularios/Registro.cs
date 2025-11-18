@@ -22,13 +22,10 @@ namespace ProyectoBiblioteca.Formularios
 
         private bool camposLlenos()
         {
-            foreach (Control control in this.Controls)
+            if (txtNombre.Text == "" || txtUsuario.Text == "" || txtContrasena.Text == "")
             {
-                if (control is TextBox textBox && textBox.Name != "txtId" && string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    MessageBox.Show("Debe llenar todos los campos");
-                    return false;
-                }
+                MessageBox.Show("Debe llenar todos los campos");
+                return false;
             }
 
             if (cmbRol.SelectedIndex == -1)
@@ -62,7 +59,10 @@ namespace ProyectoBiblioteca.Formularios
 
             if (t.insertar(nuevoUsuario))
             {
-                MessageBox.Show("Usuario registrado con exito");
+                MessageBox.Show("Registro exitoso! por favor inicie sesión");
+
+                DialogResult = DialogResult.OK;
+
                 this.Close();
             }
         }
@@ -70,6 +70,11 @@ namespace ProyectoBiblioteca.Formularios
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtContrasena.UseSystemPasswordChar = !checkPassword.Checked;
         }
     }
 }

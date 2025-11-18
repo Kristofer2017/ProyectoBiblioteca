@@ -35,7 +35,7 @@
             // 
             this.label1.Location = new System.Drawing.Point(35, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 103);
+            this.label1.Size = new System.Drawing.Size(179, 61);
             this.label1.TabIndex = 0;
             this.label1.Text = "Este formulario solo se utiliza como controlador entre el inicio de sesion y la p" +
     "agina de inicio de la biblioteca";

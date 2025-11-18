@@ -10,63 +10,47 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using ComboBox = System.Windows.Forms.ComboBox;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace ProyectoBiblioteca
 {
     public partial class Home : Form
     {
-        public event EventHandler Logout;
-
         public Home()
         {
             InitializeComponent();
         }
-        
-        Transacciones t = new Transacciones();
 
-        private void Home_Load(object sender, EventArgs e)
+        Transacciones t = new Transacciones();
+        public event EventHandler Logout;
+        private void Home_Load(object sender, EventArgs e) => ActualizarHomeForm();
+
+        public void ActualizarHomeForm()
         {
+            tabPrincipal.ItemSize = new Size(0, 1); // Ocultar pestañas del Tab Control
+
             if (SignIn.usuarioIngreso != null)
             {
-                // Titulo, ocultar tabs y selecionar ventana del rol
-                lblTituloBienvenida.Text += SignIn.usuarioIngreso.nombreUsuario;
+                lblTituloBienvenida.Text = $"Bienvenido! {SignIn.usuarioIngreso.nombreUsuario}";
 
-                tabPrincipal.ItemSize = new Size(0, 1);
-
+                // Seleccionar la pestaña correcta, en base al usuario que ingresa
                 switch (SignIn.usuarioIngreso.idRol)
                 {
-                    case 1: tabPrincipal.SelectedIndex = 2; break;
-                    case 2: tabPrincipal.SelectedIndex = 1; break;
-                    case 3: tabPrincipal.SelectedIndex = 0; break;
+                    case 1: tabPrincipal.SelectedIndex = 2; break; // Invitado
+                    case 2: tabPrincipal.SelectedIndex = 1; break; // Usuario
+                    case 3: tabPrincipal.SelectedIndex = 0; break; // Administrador
                 }
             }
-
-            actualizarDGVs();
-
-            lblErrorMsj.Text = string.Empty;
-            /*
-            lblDescripcion.Text = string.Format(
-                "\nISBN: {0}" +
-                "\nNombre del libro: {1}" +
-                "\nAutor: {2}" +
-                "\nEditorial: {3}" +
-                "\nGenero: {4}" +
-                "\nFecha Publicación: {5}" +
-                "\nDescripción: {6}" +
-                "\nPrecio: {7}");
-            */
         }
 
-        private void actualizarDGVs()
-        {
-            dgvLibrosUsuarios.DataSource = t.consultarLibrosUsuarios();
-            dgvLibrosInvitados.DataSource = t.consultarLibrosUsuarios();
-        }
 
+        // Botones Administrador
         private void btnLibros_Click(object sender, EventArgs e)
         {
-            using(LibrosAdmin frmLibro = new LibrosAdmin())
+            using(AdministrarLibros frmLibro = new AdministrarLibros())
             {
                 frmLibro.ShowDialog();
             }
@@ -82,27 +66,64 @@ namespace ProyectoBiblioteca
 
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
-            using(Prestamos prestamos = new Prestamos())
+            using(AdministrarPrestamos prestamos = new AdministrarPrestamos())
             {
                 prestamos.ShowDialog();
             }
         }
 
-        
-
-        private void btnCompras_Click(object sender, EventArgs e)
+        private void btnProveedores_Click(object sender, EventArgs e)
         {
-
+            using (AdministrarProveedores frmProveedores = new AdministrarProveedores())
+            {
+                frmProveedores.ShowDialog();
+            }
         }
 
-        private void dgvLibrosUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnComprasVentas_Click(object sender, EventArgs e)
         {
-            //dgvLibrosUsuarios.Rows[dgvLibrosUsuarios.CurrentRow.Index].Cells[0].Value.ToString();
+            using(AdministrarComprasVentas frmComprasVentas =  new AdministrarComprasVentas())
+            {
+                frmComprasVentas.ShowDialog();
+            }
         }
 
+        // Botones de Usuario
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            using (UsuarioVenta frmVenta = new UsuarioVenta())
+            {
+                frmVenta.ShowDialog();
+            }
+        }
+
+        private void btnPrestar_Click(object sender, EventArgs e)
+        {
+            using (UsuarioPrestar frmPrestar = new UsuarioPrestar())
+            {
+                frmPrestar.ShowDialog();
+            }
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            using(ReporteLibros reporteLibros = new ReporteLibros())
+            {
+                reporteLibros.ShowDialog();
+            }
+        }
+
+        private void btnVerLibros_Click(object sender, EventArgs e)
+        {
+            using (InvitadoVerLibros frmLibrosInv = new InvitadoVerLibros())
+            {
+                frmLibrosInv.ShowDialog();
+            }
+        }
+
+        // Logout y form closing
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            // Borramos el usuario que inicio sesion
             SignIn.usuarioIngreso = null;
 
             Logout?.Invoke(this, EventArgs.Empty);
@@ -110,22 +131,7 @@ namespace ProyectoBiblioteca
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /* Mostrar el cuadro de confirmación
-            var result = MessageBox.Show(
-                "¿Estás seguro de que deseas salir de la aplicación?",
-                "Confirmación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true; // Cancela el cierre si el usuario selecciona "No"
-            }
-            else
-            {
-                Application.Exit(); // Finaliza la aplicación correctamente
-            }*/
+            Application.Exit();
         }
     }
 }

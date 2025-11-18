@@ -1,6 +1,6 @@
 ﻿namespace ProyectoBiblioteca.Formularios
 {
-    partial class LibrosAdmin
+    partial class AdministrarLibros
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrosAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministrarLibros));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnAgregInvent = new System.Windows.Forms.Button();
+            this.btnComprarLibros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numInvetario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -243,9 +243,16 @@
             // numInvetario
             // 
             this.numInvetario.Location = new System.Drawing.Point(152, 368);
+            this.numInvetario.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numInvetario.Name = "numInvetario";
+            this.numInvetario.ReadOnly = true;
             this.numInvetario.Size = new System.Drawing.Size(116, 20);
             this.numInvetario.TabIndex = 14;
+            this.numInvetario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSelEditorial
             // 
@@ -255,6 +262,7 @@
             this.btnSelEditorial.TabIndex = 15;
             this.btnSelEditorial.Text = "Seleccionar";
             this.btnSelEditorial.UseVisualStyleBackColor = true;
+            this.btnSelEditorial.Click += new System.EventHandler(this.btnSelEditorial_Click);
             // 
             // btnSelAutor
             // 
@@ -264,14 +272,20 @@
             this.btnSelAutor.TabIndex = 15;
             this.btnSelAutor.Text = "Seleccionar";
             this.btnSelAutor.UseVisualStyleBackColor = true;
+            this.btnSelAutor.Click += new System.EventHandler(this.btnSelAutor_Click);
             // 
             // dgvLibros
             // 
+            this.dgvLibros.AllowUserToAddRows = false;
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLibros.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvLibros.Location = new System.Drawing.Point(416, 61);
+            this.dgvLibros.MultiSelect = false;
             this.dgvLibros.Name = "dgvLibros";
+            this.dgvLibros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLibros.Size = new System.Drawing.Size(435, 364);
             this.dgvLibros.TabIndex = 16;
+            this.dgvLibros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellClick);
             // 
             // btnAgregar
             // 
@@ -281,6 +295,7 @@
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -308,6 +323,7 @@
             this.btnModificar.TabIndex = 17;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -317,6 +333,7 @@
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -326,6 +343,7 @@
             this.btnLimpiar.TabIndex = 17;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // lblTitulo
             // 
@@ -340,25 +358,28 @@
             this.lblTitulo.Text = "Administrar Libros";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAgregInvent
+            // btnComprarLibros
             // 
-            this.btnAgregInvent.Location = new System.Drawing.Point(274, 365);
-            this.btnAgregInvent.Name = "btnAgregInvent";
-            this.btnAgregInvent.Size = new System.Drawing.Size(118, 23);
-            this.btnAgregInvent.TabIndex = 15;
-            this.btnAgregInvent.Text = "Agregar Inventario";
-            this.btnAgregInvent.UseVisualStyleBackColor = true;
+            this.btnComprarLibros.Enabled = false;
+            this.btnComprarLibros.Location = new System.Drawing.Point(274, 365);
+            this.btnComprarLibros.Name = "btnComprarLibros";
+            this.btnComprarLibros.Size = new System.Drawing.Size(118, 23);
+            this.btnComprarLibros.TabIndex = 15;
+            this.btnComprarLibros.Text = "Comprar Libros";
+            this.btnComprarLibros.UseVisualStyleBackColor = true;
+            this.btnComprarLibros.Click += new System.EventHandler(this.btnComprarLibros_Click);
             // 
-            // LibrosAdmin
+            // AdministrarLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(873, 538);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dgvLibros);
             this.Controls.Add(this.btnSelAutor);
-            this.Controls.Add(this.btnAgregInvent);
+            this.Controls.Add(this.btnComprarLibros);
             this.Controls.Add(this.btnSelEditorial);
             this.Controls.Add(this.numInvetario);
             this.Controls.Add(this.dtpFechaPublic);
@@ -385,9 +406,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "LibrosAdmin";
+            this.Name = "AdministrarLibros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LibrosAdmin";
+            this.Text = "Administrar Libros";
+            this.Load += new System.EventHandler(this.LibrosAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numInvetario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -429,6 +451,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnAgregInvent;
+        private System.Windows.Forms.Button btnComprarLibros;
     }
 }

@@ -22,8 +22,9 @@ namespace ProyectoBiblioteca
         {
             InitializeComponent();
         }
-
+        
         Transacciones t = new Transacciones();
+
         public static Usuario usuarioIngreso { get; set; }
 
         private void btnSignin_Click(object sender, EventArgs e)
@@ -63,6 +64,7 @@ namespace ProyectoBiblioteca
         {
             txtUsuario.Text = string.Empty;
             txtContra.Text = string.Empty;
+            checkPassword.Checked = false;
         }
 
         private bool camposVacios()
@@ -72,9 +74,16 @@ namespace ProyectoBiblioteca
 
         private void btnInvitado_Click(object sender, EventArgs e)
         {
-            using(NombreInvitado frmInvitado = new NombreInvitado())
+            using(RegistroInvitado frmInvitado = new RegistroInvitado())
             {
-                frmInvitado.ShowDialog();
+                DialogResult resultado = frmInvitado.ShowDialog();
+
+                if (resultado == DialogResult.OK)
+                {
+                    usuarioIngreso = frmInvitado.nuevoInvitado;
+
+                    LoginSuccess?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
         
@@ -82,28 +91,20 @@ namespace ProyectoBiblioteca
         {
             using (Registro frmRegistro = new Registro())
             {
-                frmRegistro.ShowDialog();
+                DialogResult resultado = frmRegistro.ShowDialog();
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtContra.UseSystemPasswordChar = !checkPassword.Checked;
         }
 
         private void SignIn_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /* Mostrar el cuadro de confirmación
-            var result = MessageBox.Show(
-                "¿Estás seguro de que deseas salir de la aplicación?",
-                "Confirmación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true; // Cancela el cierre si el usuario selecciona "No"
-            }
-            else
-            {
-                Application.Exit(); // Finaliza la aplicación correctamente
-            }*/
+            Application.Exit();
         }
+
+        
     }
 }

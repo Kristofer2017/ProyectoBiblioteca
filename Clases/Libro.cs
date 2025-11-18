@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoBiblioteca.Clases
 {
-    internal class Libro : Biblioteca
+    public class Libro : Biblioteca
     {
         public string isbn { get; set; }
         public string titulo { get; set; }
@@ -18,5 +18,23 @@ namespace ProyectoBiblioteca.Clases
         public string estado { get; set; }
         public int idEditorial { get; set; }
         public int idAutor { get; set; }
+
+        public Libro(string isbn, string titulo, string descripcion, string genero, string fechaPublicacion, double precio, int idEditorial, int idAutor)
+        {
+            this.isbn = isbn;
+            this.titulo = titulo;
+            this.descripcion = descripcion;
+            this.genero = genero;
+            this.fechaPublicacion = fechaPublicacion;
+            this.precio = precio;
+            this.inventario = inventario;
+            this.idEditorial = idEditorial;
+            this.idAutor = idAutor;
+        }
+
+        public Libro()
+        {
+            
+        }
     }
 }
